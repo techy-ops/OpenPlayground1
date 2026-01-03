@@ -106,9 +106,7 @@ Check out what the community has built so far:
 
 ### Top Contributors
 
-<a href="https://github.com/YadavAkhileshh/OpenPlayground/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=YadavAkhileshh/OpenPlayground" />
-</a>
+[![Contributors](https://contrib.rocks/image?repo=YadavAkhileshh/OpenPlayground)](https://github.com/YadavAkhileshh/OpenPlayground/graphs/contributors)
 
 ---
 

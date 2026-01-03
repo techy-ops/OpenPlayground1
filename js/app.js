@@ -14,27 +14,23 @@ const savedTheme = localStorage.getItem("theme") || "light";
 html.setAttribute("data-theme", savedTheme);
 updateThemeIcon(savedTheme);
 
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    const newTheme =
-      html.getAttribute("data-theme") === "light" ? "dark" : "light";
-    html.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-    updateThemeIcon(newTheme);
+toggleBtn.addEventListener("click", () => {
+  const newTheme =
+    html.getAttribute("data-theme") === "light" ? "dark" : "light";
+  html.setAttribute("data-theme", newTheme);
+  localStorage.setItem("theme", newTheme);
+  updateThemeIcon(newTheme);
 
-    // Add shake animation
-    toggleBtn.classList.add("shake");
-    setTimeout(() => toggleBtn.classList.remove("shake"), 500);
-  });
-}
+  // Add shake animation
+  toggleBtn.classList.add("shake");
+  setTimeout(() => toggleBtn.classList.remove("shake"), 500);
+});
 
 function updateThemeIcon(theme) {
-  if (themeIcon) {
-    if (theme === "dark") {
-      themeIcon.className = "ri-moon-fill";
-    } else {
-      themeIcon.className = "ri-sun-line";
-    }
+  if (theme === "dark") {
+    themeIcon.className = "ri-moon-fill";
+  } else {
+    themeIcon.className = "ri-sun-line";
   }
 }
 
@@ -43,15 +39,13 @@ function updateThemeIcon(theme) {
 // ===============================
 const scrollBtn = document.getElementById("scrollToTopBtn");
 
-if (scrollBtn) {
-  window.addEventListener("scroll", () => {
-    scrollBtn.classList.toggle("show", window.scrollY > 300);
-  });
+window.addEventListener("scroll", () => {
+  scrollBtn.classList.toggle("show", window.scrollY > 300);
+});
 
-  scrollBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-}
+scrollBtn.addEventListener("click", () => {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+});
 
 // ===============================
 // Mobile Navbar

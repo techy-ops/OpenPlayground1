@@ -17,8 +17,31 @@
         rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
 <style>
-
+    /* Dark Theme Variables */
+    :root {
+        /* Light theme (default) */
+        --bg-primary: #ffffff;
+        --bg-secondary: #f8fafc;
+        --text-primary: #1f2937;
+        --text-secondary: #6b7280;
+        --border-light: #e5e7eb;
+        --card-bg: #ffffff;
+        --glass-bg: rgba(255, 255, 255, 0.8);
+        --primary-color: #2563eb;
+    }
     
+    [data-theme="dark"] {
+        /* Dark theme */
+        --bg-primary: #0f172a;
+        --bg-secondary: #1e293b;
+        --text-primary: #f1f5f9;
+        --text-secondary: #94a3b8;
+        --border-light: #334155;
+        --card-bg: #1e293b;
+        --glass-bg: rgba(15, 23, 42, 0.8);
+        --primary-color: #3b82f6;
+    }
+
     /* Contributors Section Styling */
     .contributors-section {
         padding: 5rem 1.5rem;
@@ -51,7 +74,7 @@
 
     .contributor-card:hover {
         transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     }
 
     .contributor-avatar {
@@ -81,7 +104,7 @@
         gap: 0.5rem;
         padding: 0.4rem 0.8rem;
         background: rgba(37, 99, 235, 0.1);
-        color: #2563eb;
+        color: var(--primary-color);
         border-radius: 20px;
         font-size: 0.9rem;
         font-weight: 500;
@@ -118,13 +141,13 @@
         width: 80px;
         height: 80px;
         border-radius: 50%;
-        background: #e5e7eb;
+        background: var(--border-light);
         margin: 0 auto 1rem;
     }
 
     .skeleton-text {
         height: 20px;
-        background: #e5e7eb;
+        background: var(--border-light);
         border-radius: 4px;
         margin: 0.5rem 0;
     }
@@ -165,7 +188,7 @@
 
     .view-all-btn:hover {
         background: var(--primary-color);
-        color: rgb(26, 6, 92);
+        color: white;
     }
     .contributors-show-more {
         text-align: center;
@@ -201,21 +224,22 @@
         .pagination-container button {
             padding: 8px 14px;
             border-radius: 8px;
-            border: 1px solid #ddd;
-            background: white;
+            border: 1px solid var(--border-light);
+            background: var(--card-bg);
+            color: var(--text-primary);
             cursor: pointer;
             font-weight: 500;
             transition: all 0.2s ease;
         }
 
         .pagination-container button.active {
-            background: #2563eb;
+            background: var(--primary-color);
             color: white;
-            border-color: #2563eb;
+            border-color: var(--primary-color);
         }
 
-        .pagination-container button:hover {
-            background: #e5e7eb;
+        .pagination-container button:hover:not(.active) {
+            background: var(--border-light);
         }
 
         .card.hidden {
@@ -258,6 +282,7 @@
         .nav-links {
             display: flex;
             gap: 1.5rem;
+            align-items: center;
         }
 
         .nav-toggle {
@@ -266,6 +291,27 @@
             border: none;
             font-size: 1.8rem;
             cursor: pointer;
+            color: var(--text-primary);
+        }
+
+        /* Theme toggle in navbar */
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            color: var(--text-primary);
+            padding: 0.5rem;
+            border-radius: 8px;
+            transition: all 0.2s ease;
+        }
+
+        .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+
+        [data-theme="dark"] .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
         }
 
         /* ✅ FIXED MOBILE NAVBAR (ONLY CHANGE HERE) */
@@ -298,29 +344,174 @@
                 display: flex !important;
                 /* 🔥 KEY FIX */
             }
-        }
 
-        @media (max-width: 768px) {
-            .nav-toggle {
-                display: block !important;
-                color: var(--text-primary) !important;
+            .theme-toggle {
+                margin-top: 1rem;
             }
         }
 
         body {
             padding-top: 75px;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Update hero section for dark theme */
+        [data-theme="dark"] .hero-section {
+            color: #f1f5f9 !important;
+        }
+
+        [data-theme="dark"] .hero-title {
+            color: #f1f5f9 !important;
+        }
+
+        [data-theme="dark"] .hero-subtitle {
+            color: #cbd5e1 !important;
+        }
+
+        [data-theme="dark"] .hero-actions a[style*="border: 2px solid #111"] {
+            border-color: #cbd5e1 !important;
+            color: #cbd5e1 !important;
+        }
+
+        [data-theme="dark"] .hero-actions a[style*="border: 2px solid #111"]:hover {
+            background: #cbd5e1 !important;
+            color: #0f172a !important;
+        }
+
+        /* Update cards for dark theme */
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        [data-theme="dark"] .card:hover {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .card-heading {
+            color: var(--text-primary);
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+        }
+
+        /* Update filter buttons for dark theme */
+        .filter-btn {
+            background: var(--card-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--border-light);
+        }
+
+        .filter-btn.active {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+
+        /* Update search and sort boxes */
+        .search-box, .sort-box {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+        }
+
+        .search-box input, .sort-box select {
+            background: transparent;
+            color: var(--text-primary);
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        /* Update contribute section */
+        .contribute-section {
+            background: var(--bg-secondary);
+        }
+
+        .step-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+        }
+
+.code-block {
+    background: rgba(0, 0, 0, 0.05);
+    color: #1f2937;
+    border-radius: 6px;
+    padding: 12px 16px; /* Increased padding */
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Allows horizontal scrolling */
+    position: relative;
+    text-align: left;
+    word-break: break-all; /* Breaks long lines */
+    white-space: pre-wrap; /* Preserves whitespace but wraps */
+}
+
+
+.code-block code {
+    display: block;
+    color: inherit;
+    background: transparent;
+    padding: 0;
+    font-size: inherit;
+    font-family: inherit;
+    line-height: 1.5;
+    max-width: 100%;
+    overflow-wrap: break-word;
+}
+
+/* For very long git commands */
+.code-block code {
+    word-break: break-word;
+    overflow-wrap: anywhere;
+}
+
+/* Dark theme */
+[data-theme="dark"] .code-block {
+    background: rgba(255, 255, 255, 0.05);
+    color: #e5e7eb;
+    border-color: rgba(255, 255, 255, 0.1);
+}
+        /* Update footer */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+        }
+
+        .footer-links a:hover {
+            color: var(--primary-color);
+        }
+
+        .social-link {
+            color: var(--text-primary);
+            background: var(--card-bg);
+            border: 1px solid var(--border-light);
+        }
+
+        .social-link:hover {
+            background: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
         }
     </style>
 </head>
 
 <body>
-    <!-- Theme Toggle -->
-    <div class="theme-toggle-wrapper">
-        <button id="toggle-mode-btn" aria-label="Toggle theme">
-            <i class="ri-sun-line" id="theme-icon"></i>
-        </button>
-    </div>
-
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-container">
@@ -329,10 +520,6 @@
                 <span>OpenPlayground</span>
             </a>
 
-            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-                <i class="ri-menu-3-line"></i>
-            </button>
-
             <div class="nav-links" id="navLinks">
                 <a href="#projects" class="nav-link">Projects</a>
                 <a href="#contribute" class="nav-link">Contribute</a>
@@ -340,11 +527,21 @@
                 <a href="https://github.com/YadavAkhileshh/OpenPlayground" target="_blank" class="nav-link">
                     <i class="ri-github-fill"></i> GitHub
                 </a>
+                
+                <!-- Theme Toggle Button in Navbar -->
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <i class="ri-sun-line" id="themeIcon"></i>
+                </button>
             </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+                <i class="ri-menu-3-line"></i>
+            </button>
         </div>
     </nav>
 
     <script>
+        // Mobile navbar toggle
         const toggle = document.getElementById("navToggle");
         const links = document.getElementById("navLinks");
 
@@ -380,7 +577,7 @@
         justify-content: center;
         text-align: center;
         padding: 2rem;
-        background: url('your-hero-image.jpg') center/cover no-repeat;
+        background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-primary) 100%);
     ">
 
         <div class="hero-grid" style="
@@ -393,7 +590,7 @@
         <div class="hero-content" style="
             position: relative;
             z-index: 2;
-            color: #111;
+            color: var(--text-primary);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -409,7 +606,8 @@
                 padding: 0.5rem 1rem;
                 border-radius: 999px;
                 font-weight: 500;
-                background: transparent;
+                background: rgba(37, 99, 235, 0.1);
+                color: var(--primary-color);
             ">
                 <span class="badge-icon"><i class="ri-rocket-line"></i></span>
                 <span class="badge-text">v2.0 Community Launch</span>
@@ -419,10 +617,10 @@
                 font-size: 4rem;
                 font-weight: 800;
                 line-height: 1.2;
-                color: #111;
+                color: var(--text-primary);
             ">
                 <span class="text-gradient" style="
-                    background: linear-gradient(90deg,#2563eb,#9333ea);
+                    background: linear-gradient(90deg, var(--primary-color), #9333ea);
                     -webkit-background-clip: text;
                     -webkit-text-fill-color: transparent;
                 ">Build,</span> Share and Explore
@@ -432,7 +630,7 @@
                 font-size: 1.5rem;
                 line-height: 1.6;
                 max-width: 700px;
-                color: #111;
+                color: var(--text-secondary);
             ">
                 A community-driven platform where developers showcase their creativity through interactive web projects
             </p>
@@ -450,7 +648,7 @@
                     align-items: center;
                     gap: 0.5rem;
                     padding: 0.8rem 1.5rem;
-                    background: #2563eb;
+                    background: var(--primary-color);
                     color: white;
                     border-radius: 8px;
                     font-weight: 600;
@@ -465,14 +663,14 @@
                     align-items: center;
                     gap: 0.5rem;
                     padding: 0.8rem 1.5rem;
-                    border: 2px solid #111;
-                    color: #111;
+                    border: 2px solid var(--text-primary);
+                    color: var(--text-primary);
                     border-radius: 8px;
                     font-weight: 600;
                     text-decoration: none;
                     transition: 0.2s;
-                " onmouseover="this.style.background='#111'; this.style.color='white'"
-                    onmouseout="this.style.background='transparent'; this.style.color='#111'">
+                " onmouseover="this.style.background='var(--text-primary)'; this.style.color='var(--bg-primary)'"
+                    onmouseout="this.style.background='transparent'; this.style.color='var(--text-primary)'">
                     <i class="ri-github-fill"></i> GitHub
                 </a>
             </div>
@@ -1893,6 +2091,65 @@
         
         // Expose to global scope if needed
         window.ProjectManager = projectManager;
+    });
+</script>
+
+<script>
+    // DARK THEME TOGGLE FUNCTIONALITY
+    
+    // Get theme toggle button
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = document.getElementById('themeIcon');
+    const html = document.documentElement;
+    
+    // Check for saved theme preference or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+    
+    // Toggle theme function
+    function toggleTheme() {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+        
+        // Update theme
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        updateThemeIcon(newTheme);
+    }
+    
+    // Update theme icon based on current theme
+    function updateThemeIcon(theme) {
+        if (theme === 'dark') {
+            themeIcon.className = 'ri-moon-line';
+            themeToggle.setAttribute('aria-label', 'Switch to light theme');
+        } else {
+            themeIcon.className = 'ri-sun-line';
+            themeToggle.setAttribute('aria-label', 'Switch to dark theme');
+        }
+    }
+    
+    // Add event listener to theme toggle button
+    themeToggle.addEventListener('click', toggleTheme);
+    
+    // Optional: Detect system preference
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+    
+    // If no saved preference, use system preference
+    if (!localStorage.getItem('theme')) {
+        if (prefersDarkScheme.matches) {
+            html.setAttribute('data-theme', 'dark');
+            updateThemeIcon('dark');
+        }
+    }
+    
+    // Listen for system theme changes
+    prefersDarkScheme.addEventListener('change', (e) => {
+        if (!localStorage.getItem('theme')) {
+            const newTheme = e.matches ? 'dark' : 'light';
+            html.setAttribute('data-theme', newTheme);
+            updateThemeIcon(newTheme);
+        }
     });
 </script>
 

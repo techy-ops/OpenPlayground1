@@ -2552,6 +2552,29 @@
 </script>
 
     <script src="./js/app.js"></script>
+        <!-- Chatbot: OpenPlayground Assistant -->
+        <button id="chatbot-toggle">💬</button>
+
+        <div class="chatbot-container" id="chatbot">
+            <div class="chatbot-header">
+                <span>OpenPlayground Assistant</span>
+                <button id="close-chat">✖</button>
+            </div>
+
+            <div class="chatbot-messages" id="chatbot-messages">
+                <div class="bot-message">
+                    👋 Hi! I’m the OpenPlayground Assistant.  
+                    <br />How can I help you?
+                </div>
+            </div>
+
+            <div class="chatbot-input">
+                <input type="text" id="user-input" placeholder="Type your message..." />
+                <button id="send-btn">➤</button>
+            </div>
+        </div>
+
+        <script src="./js/chatbot.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,16 @@
 [
 
   {
+    "title": "Personal Diary",
+    "category": "utility",
+    "description": "A personal diary app to write, view, search, and manage daily entries with local data persistence.",
+    "tech": ["HTML", "CSS", "JavaScript"],
+    "link": "./projects/PersonalDiary/index.html",
+    "icon": "ri-booklet-line",
+    "coverStyle": "background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%); color:#78350f;"
+  },
+
+  {
     "title": "Notes Taking App",
     "category": "utility",
     "description": "A lightweight frontend notes app to create, edit, search, and store notes using LocalStorage.",
@@ -9,7 +19,7 @@
     "icon": "ri-sticky-note-line",
     "coverStyle": "background: linear-gradient(135deg, #ecfeff 0%, #cffafe 100%); color:#164e63;"
   },
-  
+
   {
   "title": "Stack vs Queue Visualizer",
   "category": "utility",

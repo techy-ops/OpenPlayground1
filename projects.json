@@ -1006,6 +1006,19 @@
       "CSS",
       "JS"
     ],
+    "link": "./projects/word-memory-game/index.html",
+    "icon": "ri-file-word-line",
+    "coverStyle": "background: #be185d; color: white;"
+  } ,
+  {
+  "title": "Advanced Text Case Converter",
+  "category": "utility",
+  "description": "Convert text into multiple cases with live processing and shortcuts.",
+  "tech": ["HTML", "CSS", "JS"],
+  "link": "./projects/text-case-converter/index.html",
+  "icon": "ri-text",
+  "coverClass": "text-case-cover"
+}
     "link": "./projects/Insta_bio_suggesstion/index.html",
     "icon": "ri-user-line",
     "coverStyle": "background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%); color: #7c2d12;"

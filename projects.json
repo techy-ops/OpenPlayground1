@@ -1188,6 +1188,19 @@
     "icon": "ri-sword-line",
     "coverStyle": "background: linear-gradient(135deg, #064e3b 0%, #16a34a 100%); color:#ecfdf5;"
   },
+   {
+    "title": "Random OTP Generator ",
+    "category": "utility",
+    "description": "Generate secure one-time passwords (OTPs)",
+    "tech": [
+      "HTML",
+      "CSS",
+      "JS"
+    ],
+    "link": "./projects/otp-generator/index.html",
+    "icon": "ri-lock-password-line",
+    "coverStyle": "background: linear-gradient(135deg, #c7d2fe 0%, #e0e7ff 100%); color:#1e3a8a;"
+  },
   {
     "title": "Loot Box Simulator",
     "category": "game",

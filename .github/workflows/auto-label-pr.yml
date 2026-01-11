@@ -1,11 +1,12 @@
 name: Auto add ECWoC26 label to PRs
 
 on:
-  pull_request:
+  pull_request_target:
     types: [opened]
 
 permissions:
   pull-requests: write
+  issues: write
   contents: read
 
 jobs:
@@ -16,11 +17,9 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const labelName = "ECWoC26";
-
             await github.rest.issues.addLabels({
               owner: context.repo.owner,
               repo: context.repo.repo,
               issue_number: context.payload.pull_request.number,
-              labels: [labelName],
+              labels: ["ECWoC26"],
             });

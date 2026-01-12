@@ -2561,5 +2561,18 @@
   "link": "./projects/tab-focus-timer/index.html",
   "icon": "ri-timer-line",
   "coverStyle": "background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%); color: white;"
+},
+{
+  "title": "Emoji Invaders",
+  "category": "game",
+  "description": "A classic space-invader style arcade game where emoji enemies attack. Defeat them to score points and unlock motivational power-ups.",
+  "tech": [
+    "HTML",
+    "CSS",
+    "JavaScript"
+  ],
+  "link": "./projects/emoji-invaders/index.html",
+  "icon": "ri-gamepad-line",
+  "coverStyle": "background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%); color: white;"
 }
 ]

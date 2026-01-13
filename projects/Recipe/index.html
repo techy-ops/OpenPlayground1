@@ -44,13 +44,58 @@ input,textarea{width:100%;padding:10px;border-radius:12px;border:1px solid #ccc;
 <script>
 const { jsPDF } = window.jspdf;
 let recipes = JSON.parse(localStorage.getItem('recipes')) || [
- {id:1,title:'Veg Biryani',img:'https://images.unsplash.com/photo-1600628422019-8a0b8e7c7d5d',ingredients:['Rice','Vegetables','Spices'],steps:['Cook rice','Prepare masala','Mix & steam'],time:900},
- {id:2,title:'Margherita Pizza',img:'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3',ingredients:['Flour','Cheese','Tomato Sauce'],steps:['Prepare dough','Add toppings','Bake'],time:800},
- {id:3,title:'Pancakes',img:'https://images.unsplash.com/photo-1587732019718-4a4e7f5b6a2d',ingredients:['Flour','Milk','Eggs'],steps:['Make batter','Cook on pan','Serve hot'],time:400},
- {id:4,title:'Caesar Salad',img:'https://images.unsplash.com/photo-1568605114967-8130f3a36994',ingredients:['Lettuce','Croutons','Dressing'],steps:['Chop','Mix','Serve'],time:300},
- {id:5,title:'Chocolate Brownies',img:'https://images.unsplash.com/photo-1599785209707-a456fc1337bb',ingredients:['Cocoa','Butter','Sugar','Flour'],steps:['Mix ingredients','Bake','Cool & slice'],time:700},
- {id:6,title:'Masala Dosa',img:'https://images.unsplash.com/photo-1626776876729-bab4360a7b19',ingredients:['Rice batter','Potato','Spices'],steps:['Prepare filling','Spread batter','Cook & fold'],time:600}
+ {
+  id: 1,
+  title: 'Veg Biryani',
+  img: 'https://images.unsplash.com/photo-1589302168068-964664d93dc0?auto=format&fit=crop&w=600&q=80',
+
+  ingredients: ['Rice','Vegetables','Spices'],
+  steps: ['Cook rice','Prepare masala','Mix & steam'],
+  time: 900
+},
+
+ {
+   id:2,
+   title:'Margherita Pizza',
+   img:'https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?auto=format&fit=crop&w=600&q=80',
+   ingredients:['Flour','Cheese','Tomato Sauce'],
+   steps:['Prepare dough','Add toppings','Bake'],
+   time:800
+ },
+ {
+   id:3,
+   title:'Pancakes',
+   img: 'img/p.png',
+   ingredients:['Flour','Milk','Eggs'],
+   steps:['Make batter','Cook on pan','Serve hot'],
+   time:400
+ },
+ {
+   id:4,
+   title:'Caesar Salad',
+   img:'https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&w=600&q=80',
+   ingredients:['Lettuce','Croutons','Dressing'],
+   steps:['Chop','Mix','Serve'],
+   time:300
+ },
+ {
+   id:5,
+   title:'Chocolate Brownies',
+   img: 'https://images.unsplash.com/photo-1495214783159-3503fd1b572d?auto=format&fit=crop&w=600&q=80',
+   ingredients:['Cocoa','Butter','Sugar','Flour'],
+   steps:['Mix ingredients','Bake','Cool & slice'],
+   time:700
+ },
+ {
+   id:6,
+   title:'Masala Dosa',
+   img: 'https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=600',
+   ingredients:['Rice batter','Potato','Spices'],
+   steps:['Prepare filling','Spread batter','Cook & fold'],
+   time:600
+ }
 ];
+
 let favs = JSON.parse(localStorage.getItem('favs')) || [];
 
 function save(){localStorage.setItem('recipes',JSON.stringify(recipes));localStorage.setItem('favs',JSON.stringify(favs));}

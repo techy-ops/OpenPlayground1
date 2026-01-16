@@ -1,5 +1,21 @@
 [
   {
+    "title": "SubTrack - Subscription Finance Dashboard",
+    "category": "finance",
+    "difficulty": "Intermediate",
+    "description": "A personal finance dashboard dedicated to tracking the 'subscription economy' life. It visualizes all recurring payments in one place, helping users understand their true monthly and yearly burn rate with visual renewal timelines, cost analysis charts, and direct cancellation links.",
+    "tech": [
+      "HTML5",
+      "CSS3",
+      "JavaScript",
+      "ES6 Classes",
+      "LocalStorage API",
+    ],
+    "link": "./projects/SubscriptionManager/index.html",
+    "icon": "ri-pie-chart-line",
+    "coverStyle": "background: linear-gradient(135deg, #4361ee 0%, #3a0ca3 50%, #f72585 100%); color: white;"
+  },
+  {
     "title": "World Meeting Planner",
     "category": "utility",
     "difficulty": "Intermediate",

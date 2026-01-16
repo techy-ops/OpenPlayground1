@@ -15,6 +15,21 @@
     "coverStyle": "background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;"
   },
   {
+  "title": "Interactive Particle Generator",
+  "category": "Creative Coding",
+  "difficulty": "Intermediate",
+  "description": "An interactive canvas-based particle system where users can generate, control, and visualize dynamic particle effects with real-time physics, color themes, and behaviors like gravity, wind, attraction, explosions, and fountain mode.",
+  "tech": [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "Canvas API"
+  ],
+  "link": "./projects/interactive-particle-generator/index.html",
+  "icon": "ri-bubble-chart-line",
+  "coverStyle": "background: radial-gradient(circle at top, #1a0033 0%, #0a001b 60%, #000 100%); color: #e9d5ff;"
+},
+  {
     "title": "Daily Affirmation Card",
     "category": "utility",
     "difficulty": "Beginner",
@@ -3459,6 +3474,18 @@
     "link": "./projects/flowlogic/index.html",
     "icon": "ri-flow-chart",
     "coverStyle": "background: linear-gradient(135deg, #fdf2f8 0%, #fbcfe8 50%, #fae8ff 100%); color: #581c87;"
+  },
+
+  {
+    "title": "UI As Enemy",
+    "category": "Utility",
+    "difficulty": "Intermediate",
+    "description": "A tactile, book-style minimalist journal with interactive date bookmarks and focus-driven Zen Mode.",
+    "tech": ["HTML", "CSS", "JavaScript", "LocalStorage"],
+    "link": "./projects/micro-journal/index.html",
+    "icon": "ri-book-3-line",
+    "coverStyle": "background: linear-gradient(135deg, #4E342E 0%, #6D4C41 100%); color: #FFFDF8;"
+  },
   }
 ]
   },

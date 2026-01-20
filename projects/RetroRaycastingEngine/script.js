@@ -188,7 +188,7 @@ class Engine {
 
     handleKey(key, state) {
         const k = key.toLowerCase();
-        if (this.keys.hasOwnProperty(k) || k === 'shift') {
+        if (this.keys.hasOwnProperty(k)) {
             this.keys[k] = state;
         }
     }
